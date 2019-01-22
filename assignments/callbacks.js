@@ -79,12 +79,13 @@ function removeDuplicates(array, cb) {
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
   noDuplicates = [];
+  
   array.forEach(function(element) {
     if(!(noDuplicates.includes(element))){
       noDuplicates.push(element);
     }
   });
-  return noDuplicates;
+  return cb(noDuplicates);
 }
 
 removeDuplicates(items.push("Pencil"), function(noRepeats){
