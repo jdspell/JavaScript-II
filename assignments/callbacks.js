@@ -74,20 +74,22 @@ contains("NotGum", items, function(contains){
 
 /* STRETCH PROBLEM */
 
+const items1 = ['Pencil', 'Notebook', 'yo-yo', 'Gum', 'yo-yo'];
+
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-  noDuplicates = [];
-  
-  array.forEach(function(element) {
+  noDuplicates = []; 
+
+  array.forEach(element => {
+
     if(!(noDuplicates.includes(element))){
       noDuplicates.push(element);
     }
+
   });
   return cb(noDuplicates);
 }
 
-removeDuplicates(items.push("Pencil"), function(noRepeats){
-  console.log(noRepeats)
-});
+removeDuplicates(items1, function(noRepeats) { console.log(noRepeats) });
